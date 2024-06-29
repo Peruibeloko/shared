@@ -15,5 +15,28 @@
         </li>
       </ul>
     </section>
+    <section>
+      <h2>Workflows</h2>
+      <ul>
+        <li>
+          <span>Vue SPA</span>
+          <code lang="yaml">
+            name: Build and Deploy
+
+            on:
+              push:
+                branches: [main]
+              workflow_dispatch:
+
+            permissions:
+              contents: write
+
+            jobs:
+              imported:
+                uses: peruibeloko/shared/.github/workflows/vue.yaml@main
+          </code>
+        </li>
+      </ul>
+    </section>
   </body>
 </html>
