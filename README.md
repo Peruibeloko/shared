@@ -1,3 +1,3 @@
-# workflows
+# shared
 
-This repo contains shared workflows across my different projects
+This repo contains shared workflows, stylesheets, and config files across my different projects
