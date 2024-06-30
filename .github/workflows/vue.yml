@@ -10,8 +10,8 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4.1.4
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v3.0.0
@@ -21,15 +21,15 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4.0.2
         with:
-          node-version: 20
+          node-version: 22
           cache: 'pnpm'
 
-      - name: Install and Build 🔧
+      - name: Install dependencies and run build
         run: |
           pnpm install
           pnpm run build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.6.0
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.6.1
         with:
           folder: dist
