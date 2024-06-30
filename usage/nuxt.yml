@@ -11,3 +11,6 @@ permissions:
 jobs:
   imported:
     uses: peruibeloko/shared/.github/workflows/nuxt.yml@main
+    permissions:
+        pages: write
+        id-token: write
