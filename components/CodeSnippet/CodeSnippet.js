@@ -6,12 +6,12 @@ class CodeSnippet extends HTMLElement {
   }
 
   async connectedCallback() {
-    //TODO fetch template and add to shadow root
+    // fetch template and add to shadow root
     const shadow = this.attachShadow({ mode: 'open' });
 
     const parser = new DOMParser();
     const templateContents = await fetch('./components/CodeSnippet/template.html').then(d => d.text());
-    console.log(templateContents);
+
     const template = parser.parseFromString(templateContents, 'text/html');
 
     // fetch source file and add it to inner code element
