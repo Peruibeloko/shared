@@ -3,42 +3,33 @@ name: Build and Deploy (Nuxt SSG)
 on:
   workflow_call:
 
+permissions:
+  contents: write
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
 
-      - name: Setup node
-        uses: actions/setup-node@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3.0.0
         with:
-          node-version: latest
+          version: latest
 
-      - name: Enable pnpm using Corepack
-        run: corepack enable pnpm
-
-      - name: Download dependencies
-        run: pnpm install
-
-      - name: Generate static site
-        run: pnpm run generate --preset github_pages
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Setup Node
+        uses: actions/setup-node@v4.0.2
         with:
-          path: ./.output/public
+          node-version: 22
+          cache: 'pnpm'
 
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      - name: Install dependencies and run build
+        run: |
+          pnpm install
+          pnpm run generate --preset github_pages
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.6.1
+        with:
+          folder: .output/public
