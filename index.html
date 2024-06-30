@@ -3,16 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./components/CodeSnippet/CodeSnippet.js" defer type="module"></script>
+    <script src="./index.js" defer type="module"></script>
     <title>Shared</title>
   </head>
   <body>
-    <h1>Shared Files</h1>
+    <h1>Index</h1>
     <section>
       <h2>Stylesheets</h2>
       <ul>
         <li>
-          <a href="./styles/gruvbox.css">gruvbox.css</a>
+          <a href="./styles/gruvbox.css" target="_blank">gruvbox.css</a>
         </li>
       </ul>
     </section>
@@ -20,22 +24,8 @@
       <h2>Workflows</h2>
       <ul>
         <li>
-          <span>Vue SPA</span>
-          <code lang="yaml">
-            name: Build and Deploy
-
-            on:
-              push:
-                branches: [main]
-              workflow_dispatch:
-
-            permissions:
-              contents: write
-
-            jobs:
-              imported:
-                uses: peruibeloko/shared/.github/workflows/vue.yaml@main
-          </code>
+          <a href="./.github/workflows/vue.yml" target="_blank">Vue SPA</a>
+          <code-snippet src="./usage/vue.yml" lang="yaml" />
         </li>
       </ul>
     </section>
