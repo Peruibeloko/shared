@@ -1,4 +1,46 @@
+@import url(./styles/theme.css);
+
 code-snippet {
   display: block;
   margin: 1rem 0;
+  letter-spacing: -0.05rem;
+  font-weight: 300;
+  --background_color: var(--bg_s);
+  --text_color: var(--color__text);
+  --button_color: var(--color__accent);
+  --font: var(--font__monospace);
+}
+
+* {
+  background-color: var(--color__background);
+  color: var(--color__text);
+}
+
+body {
+  max-width: 40rem;
+  margin: auto;
+  font-family: var(--font__body);
+  font-weight: 300;
+}
+
+code {
+  font-family: var(--font__monospace);
+  letter-spacing: -0.05rem;
+  font-weight: 300;
+  padding: 0 0.5rem;
+  background-color: var(--bg_s);
+  color: var(--color__accent);
+  border-radius: 1rem;
+}
+
+a {
+  color: var(--color__accent);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color__primary);
+  font-family: var(--font__heading);
+  font-weight: 600;
 }

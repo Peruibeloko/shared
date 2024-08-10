@@ -3,20 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/folder_type_shared.svg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
     <link rel="stylesheet" href="./index.css" />
     <script src="./components/CodeSnippet/CodeSnippet.js" defer type="module"></script>
-    <script src="./index.js" defer type="module"></script>
     <title>Shared</title>
   </head>
   <body>
-    <h1>Index</h1>
+    <h1>Shared Files</h1>
+    <p>This website hosts files I use across many different projects, and contain GitHub Actions workflows, stylesheets and themes, WebComponents and more.</p>
+    <p>Feel free to use whatever you like, but be aware that the contents here may change at any time</p>
+    <p>The styling is provided by my standard theme, available below</p>
+    <section>
+      <h2>Usage</h2>
+      <section>
+        <h3>Stylesheets</h3>
+        <p>Just add the URL for the stylesheet in your <code>&lt;head&gt;</code> tag or <code>@import</code> it directly in your CSS file</p>
+      </section>
+      <section>
+        <h3>Workflows</h3>
+        <p>Copy the content from the code snippets and paste it in your <code>.github/workflows/[workflow_filename].yaml</code> folder</p>
+      </section>
+    </section>
     <section>
       <h2>Stylesheets</h2>
       <ul>
         <li>
           <a href="./styles/gruvbox.css" target="_blank">gruvbox.css</a>
+          <p>
+            <a href="https://github.com/morhetz/gruvbox" target="_blank">Gruvbox</a> colors specified as variables with semantic names,
+            as described by the author
+          </p>
+        </li>
+        <li>
+          <a href="./styles/theme.css" target="_blank">theme.css</a>
+          <p>
+            Standard theme for personal projects.
+            <ul>
+              <li>Gruvbox for colors, separated as text, background, primary, secondary and accent</li>
+              <li>Archivo, Sora and JetBrains Mono for typefaces -- Major Third scaling (1.25)</li>
+              <li>5 spacing variables using Perfect Fourth scaling (1.33)</li>
+            </ul>
+          </p>
         </li>
       </ul>
     </section>
