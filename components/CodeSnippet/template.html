@@ -1,5 +1,4 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
 
 <div class="code-snippet">
   <pre><code></code></pre>
@@ -9,6 +8,13 @@
 </div>
 
 <style>
+  :host {
+    --background_color: #1d2021;
+    --text_color: #ebdbb2;
+    --button_color: #ebdbb2;
+    --font: monospace;
+  }
+
   body {
     margin: 0;
     padding: 0;
@@ -19,26 +25,40 @@
 
     pre {
       margin: 0;
+      padding: 1rem;
+      background-color: var(--background_color);
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
 
       code {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+        color: var(--text_color);
+        font-size: 14px;
+        font-family: var(--font);
+        font-weight: 300;
+        letter-spacing: -0.05rem;
       }
     }
 
     div.right {
       display: flex;
       flex-direction: column;
-      background-color: #161f27;
+      background-color: var(--background_color);
+      border-bottom-right-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
 
       button {
         padding: 1rem;
         margin: 0;
 
-        background-color: #161f27;
+        border: none;
+        background-color: var(--background_color);
+        color: var(--button_color);
 
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
+        border-top-right-radius: 0.5rem;
       }
     }
   }

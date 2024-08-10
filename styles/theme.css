@@ -1,0 +1,42 @@
+@import url('https://carlinhos.dev.br/shared/styles/gruvbox.css');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap');
+
+:root {
+  /** Colors **/
+  --color__text: var(--fg);
+  --color__background: var(--bg_h);
+  --color__primary: var(--red_dim);
+  --color__secondary: var(--orange_dim);
+  --color__accent: var(--yellow);
+
+  /** Fonts **/
+  --font__heading: 'Sora', sans-serif;
+  --font__body: 'Archivo', sans-serif;
+  --font__monospace: 'JetBrains Mono', monospace;
+
+  --type-scale: 1.25; /*? Major Third ?*/
+
+  --font-size__05: calc(var(--font-size__1) / var(--type-scale));
+  --font-size__1: 1rem;
+  --font-size__2: calc(var(--font-size__1) * var(--type-scale) * var(--type-scale));
+  --font-size__3: calc(var(--font-size__2) * var(--type-scale));
+  --font-size__4: calc(var(--font-size__3) * var(--type-scale));
+  --font-size__5: calc(var(--font-size__4) * var(--type-scale));
+  --font-size__6: calc(var(--font-size__5) * var(--type-scale));
+
+  --line-height__body: 1.5;
+  --line-height__heading: 1.5;
+
+  /** Spacing **/
+  --space-scale: 1.333; /*? Perfect Fourth ?*/
+
+  --size__05: calc(var(--size__1) / var(--space-scale) / var(--space-scale));
+  --size__1: 1rem;
+  --size__2: calc(var(--size__1) * var(--space-scale) * var(--space-scale));
+  --size__3: calc(var(--size__2) * var(--space-scale) * var(--space-scale));
+  --size__4: calc(var(--size__3) * var(--space-scale) * var(--space-scale));
+
+  font-synthesis: none;
+}
