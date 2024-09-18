@@ -5,9 +5,18 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,14 +31,22 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: 22
-          cache: 'pnpm'
+          cache: "pnpm"
 
-      - name: Install dependencies and run build
-        run: |
-          pnpm install
-          pnpm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.6.1
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run build
+        run: pnpm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: dist
+          path: "./dist"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
